@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+
+
+
+body{font-family:"휴먼모음T"; }
+div,section,header,aside,footer{
+	padding: 10px;
+	
+}
+
+
+
+a{text-decoration:none;}
+
+div#container{
+	color:#cd5c5c;
+	background-color:rgb(255, 255, 255);
+	width:100%;
+	height:130px;
+	/* width:1366px; */
+	
+}
+
+header{
+	background-color:white;
+	height:130px;
+	position:relative;
+	padding:0px 0 0 0;
+	
+}
+header h1{
+	margin-left:30px;
+	
+}
+
+
+section#content{
+	background-color:white;/* float:left; */width:inherit; min-height:600px;
+	vertical-align: middle;
+
+}
+
+footer{
+	background-color:#ffa089; width:relative; clear:both; height:75px; text-align:center;
+	padding-top:40px;
+	
+}
+
+/* 로그인컨테이너 */
+	 header div.login-container{width:250px; position:absolute; right: 0px; top: 10px;} 
+	
+	
+
+	/* 로그인테이블관련 : 탭순서를 고려해 submit버튼이 2번째행 2번째열에 배치 */
+	#login-container2{height:inherit;}
+	
+	 #loginFrm table:not(#saveId){empty-cell:hide; width:25%; margin-left:auto; margin-right:auto; margin-top:10%;} 
+	 #loginFrm th, td:not(#saveId){padding:15px;}
+	 #loginFrm input{height:30px; width:300px;}
+	#loginFrm input[type=submit]{width:60px; height:50px; color:white; background:#ffa089; position:relative; top:0px;}
+	 tr #saveId{height:15px; width:40px; display:inline-block; }
+	#saveId+label{font-size:15px;font-family:'고딕'; display:inline-block;} 
+	
+	/* 메뉴관련스타일 */
+	
+	
+	
+	
+	/* header nav {background:#ffa089; width:100%;margin-top:40px; }
+	ul.main-nav{padding:0;margin:auto;display:table;text-align:center;}
+	ul태그의 가운데정렬
+	ul.main-nav{
+		 width:inherit;
+		display:inline-block;
+	     margin-left:40%;
+	     margin-right:auto;
+	     text-align:center;
+		padding:0px;
+		margin-top:inherit;
+		height: 2em;
+		
+	}
+	ul.main-nav li { 
+	      border-left: 1px #ff7f50;
+		 list-style-type: none;  
+		width: 8em; 
+		height: 2em;
+		
+		text-align: center; 
+		display:inline;
+		font-family: "휴먼모음T", sans-serif; 
+		background-color: #ffa089; 
+	}
+	ul.main-nav li:last-of-type{border-right:1px #ff7f50 solid;}
+	ul.main-nav li:first-of-type{border-left:1px #ff7f50 solid;}
+	ul.main-nav li{border-left:1px #ff7f50 solid;}
+	ul.main-nav li a {
+		display: block;
+		padding:0;
+		text-decoration: none;
+		color: #292929;
+	} */
+	
+	/* 
+	메뉴관련스타일
+	header nav {background:#ffa089; width:100%; margin-top:40px;}
+	#menucontainer{margin-top:0px; margin-left:0px; height:2em;text-align:center;}
+	ul태그의 가운데정렬
+	ul.main-nav{
+		width:80%;
+		display:table;
+		padding:0px;
+		margin:auto;
+	}
+	ul.main-nav li { 
+		list-style-type: none; 
+		width: 8em; 
+		height: 2em;
+		float: left; 
+		text-align: center; 
+		font-family: "휴먼모음T", sans-serif; 
+		border-left: 1px #ff7f50 solid;
+		background-color: #ffa089; 
+	}
+	ul.main-nav li:last-of-type{border-right:1px #ff7f50 solid;;}
+	ul.main-nav li a {
+		display: block;
+		padding:.5em;
+		text-decoration: none;
+		color: #292929;
+	} */
+	
+	
+	
+	
+	
+	ul.main-nav li:hover{
+		background-color: #e2725b;
+	}
+	ul.main-nav li:hover > a{
+		color:#ffffff; /* 글자색*/
+	}
+	
+/* 	div.login-container table#logged-in{border-spacing:10px;}
+	div.login-container table#logged-in input[type=button]{border-radius:3px;} */
+	
+	
+	 /* 회원가입페이지 */
+    section#enroll-container {text-align:center;}
+    section#enroll-container input{margin:3px;}
+    section#enroll-container table{margin:0 auto;}
+    
+    section#enroll-container table th {padding:10px 10px; text-align:center;}
+    section#enroll-container table td {padding:10px 10px; text-align:center;}
+	

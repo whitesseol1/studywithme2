@@ -1,0 +1,35 @@
+selectMemberId=SELECT * FROM Member WHERE Member_Id=?
+insertMember=INSERT INTO Member VALUES(?,?,?,?,?,?,?,?,SYSDATE,?,?,?)
+setSubjectMember=INSERT INTO Student (Member_Id,StudentTeacherStatus,InterestingSubject) VALUES(?,'student',?)
+loginMemberId=SELECT * FROM Member WHERE Member_Id=? AND Password=?
+setTeacher=INSERT INTO Teacher (Member_Id,StudentTeacherStatus,AcademicCareer,CollegeName,Major,Certificate,Career,Self_Introduction) VALUES(?,'teacher',?,?,?,?,?,?)
+updatePassword=UPDATE Member SET Password=? WHERE Member_Id=?
+updateMember=UPDATE Member SET UserName=?, Gender=?, Age=?, Email=?, Phone=?, Address=?, StudentTeacherStatus=? WHERE Member_Id=?
+updateFile=UPDATE Member SET  ProfileOriginalFileName=?, ProfileRenamedFileName=? WHERE Member_Id=?
+selectStudent=SELECT * FROM Student WHERE Member_Id=?
+selectTeacher=SELECT * FROM Teacher WHERE Member_Id=?
+updateStudent=UPDATE Student SET InterestingSubject=? WHERE Member_Id=?
+deleteMember=DELETE Member WHERE Member_Id=?;
+deleteStudentMember=DELETE Student WHERE Member_Id=?
+deleteTeacherMember=DELETE Teacher WHERE Member_Id=?
+selectStudygroup=SELECT * FROM StudyGroup WHERE StudyGroupNo=?
+selectStudygroup2=SELECT * FROM StudyGroup WHERE Member_Id=?
+selectLecture=SELECT * FROM Lecture WHERE LectureNo=?
+selectLecture2=SELECT * FROM Lecture WHERE Member_Id=?
+insertStudygroup=INSERT INTO StudyGroup (StudyGroupNo,Member_Id,Subject,StudyGroupName,GroupIntroduction,StudyPhotoOriginalFileName,StudyPhotoRenamedFileName,"Level",StudyHours,Frequency,StartDate,"Day",StudyStartTime,FixedTimeStatus,Age,TotalNumber,GroupMeetingType,StudyStatus) VALUES(SEQ_StudyGroupNo.NEXTVAL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'모임예정')
+insertteamLeaderStatus=UPDATE Student SET TeamLeaderStatus='모임장등록' WHERE Member_Id=?
+selectStudygroupList=SELECT * FROM (SELECT ROWNUM AS RNUM, A.* FROM (SELECT * FROM StudyGroup ORDER BY StartDate ASC)A) WHERE RNUM BETWEEN ? AND ?
+selectStudyCount=SELECT COUNT(*) FROM StudyGroup
+searchStudygroup=SELECT * FROM (SELECT ROWNUM AS RNUM, A.* FROM (SELECT * FROM StudyGroup WHERE @ LIKE ?)A) WHERE RNUM BETWEEN ? AND ?
+searchStudygroupCount=SELECT COUNT(*) FROM StudyGroup WHERE @ LIKE ?
+insertStudyComment=INSERT INTO StudyComment VALUES(?,?,?,?,SYSDATE,?,SEQ_StudyCommentNo.NEXTVAL)
+selectStudyComment=SELECT * FROM StudyComment WHERE StudyGroupNo=? START WITH StudyCommentLevel=1 CONNECT BY PRIOR StudyCommentNo=CommentReference
+selectStudyMembers=SELECT * FROM StudyMembers WHERE StudyGroupNo=?
+insertStudyMember=INSERT INTO StudyMembers VALUES(?,?)
+insertEnrollStudy=UPDATE Student SET EnrollStudy=? WHERE Member_Id=?
+deleteStudyComment=DELETE StudyComment WHERE StudyCommentNo=?
+cancelEnrollStudy=UPDATE Student SET EnrollStudy=? WHERE Member_Id=?
+cancelstudyMember=DELETE StudyMembers WHERE StudyGroupNo=? and Member_Id=?
+updateStudy=UPDATE StudyGroup SET StudyGroupName=?, GroupIntroduction=?, "Level"=?, StudyHours=?, Frequency=?, "Day"=?, StudyStartTime=?, FixedTimeStatus=?, Age=?, TotalNumber=?,  GroupMeetingType=? WHERE StudyGroupNo=?
+updateFile2=UPDATE StudyGroup SET StudyPhotoOriginalFileName=?, StudyPhotoRenamedFileName=? WHERE StudyGroupNo=?
+studyStart=UPDATE StudyGroup SET StudyStatus='모임시작' WHERE StudyGroupNo=?
